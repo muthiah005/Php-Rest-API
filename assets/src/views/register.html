@@ -1,0 +1,55 @@
+
+<md-dialog aria-label="user dialog"  class="common_modal" >
+  <md-dialog-content>
+  	<div class="row no_margin mb_0">
+  		<div class="col s12 m12 l12 p0">
+  			<div class="info_holder">
+  				<h4>Register</h4> 
+  			</div>
+  		</div>
+  	</div>
+
+   	<div class="row">
+		    <ul class="stepper horizontal" id="horizontal" >
+                  <li class="step">
+                     <div data-step-label="To step-title!" class="step-title waves-effect waves-dark">Step 1</div>
+                     <div class="step-content">
+                        <div class="row">
+                           <div class="input-field col s12">
+                              <input id="horizontal_email" name="horizontal_email" type="email" class="validate" required>
+                              <label for="horizontal_email">Your e-mail</label>
+                           </div>
+                        </div>
+                        <div class="step-actions">
+                           <button class="waves-effect waves-dark btn blue next-step">CONTINUE</button>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="step">
+                     <div class="step-title waves-effect waves-dark">Step 2</div>
+                     <div class="step-content">
+                        <div class="row">
+                           <div class="input-field col s12">
+                              <input id="horizontal_password" name="horizontal_password" type="password" class="validate" required>
+                              <label for="horizontal_password">Your password</label>
+                           </div>
+                        </div>
+                        <div class="step-actions">
+                           <button class="waves-effect waves-dark btn blue next-step" data-feedback="someFunction">CONTINUE</button>
+                           <button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="step">
+                     <div class="step-title waves-effect waves-dark">Step 3</div>
+                     <div class="step-content">
+                        Finish!
+                        <div class="step-actions">
+                           <button class="waves-effect waves-dark btn blue" type="submit">SUBMIT</button>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+	</div>
+  </md-dialog-content>
+</md-dialog>

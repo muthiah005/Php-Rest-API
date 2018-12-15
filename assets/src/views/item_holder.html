@@ -1,0 +1,36 @@
+<div class="row item_list">
+	<h4 class="head_item">Our school kits</h4>
+	<div class="col l3 m3 s3"  ng-repeat="item in itemList |
+        offset: currentPage*itemsPerPage |
+        limitTo: itemsPerPage">
+			<div class="card">
+			<div class="card-image custom_img">
+			<img src="https://dummyimage.com/300x200/ddd/ddd" />
+			<span class="card-title">{{item.name}}</span>
+			</div>
+			<div class="card-content">
+			<p>{{item.items}}</p>
+			<p>{{item.price}}</p>
+			</div>
+			<div class="card-action">
+			 <button class="btn waves-effect waves-light yellow add_cart_btn" type="submit" name="action">
+			 	ADD TO CART
+			  </button>
+			</div>
+			</div>
+	</div>
+</div>
+
+<div class="pagination">
+	<ul>
+		<li ng-class="prevPageDisabled()">
+			<a href ng-click="prevPage()">« Prev</a>
+		</li>
+		<li ng-repeat="n in range()" ng-class="{active: n == currentPage}" ng-click="setPage(n)" ng-if="n > -1">
+			<a href="#">{{n+1}}</a>
+		</li>
+		<li ng-class="nextPageDisabled()">
+			<a href ng-click="nextPage()">Next »</a>
+		</li>
+	</ul>
+</div>

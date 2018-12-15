@@ -1,0 +1,17 @@
+
+		<nav class="nav_item bg_blue">
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo">
+					<img src="./assets/img/logo.png"/>
+				</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="javascript:void(0)" ><i class="material-icons white-text" ng-click="showCart()">shopping_cart</i></a></li>
+					<li><a href="javascript:void(0)" ng-click="login(event)">Login</a></li>
+					<li><a href="javascript:void(0)" ng-click="register(event)">Register</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="cart_holder" ng-show="ui.showcart">
+<cart-item></cart-item>
+</div>  
