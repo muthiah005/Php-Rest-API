@@ -35,42 +35,36 @@ class users extends REST_Controller
 
   }
 
-  public function saveUsers_post() {
-    $this->load->model('users_model');
-    print_r($this->post());
-    $insert_id = $this->users_model->saveUsers($this->post());
-    $this->returnApiResult( $insert_id );
+public function saveUsers_post() {
+$insert_id = $this->users_model->saveUsers($this->post());
+$this->returnApiResult( $insert_id );
 
-  }
+}
 
 
-  public function updateUsers_post()  {
-    $this->load->model('users_model');
-    $update = $this->users_model->updateUsers($this->post());
-    $this->returnApiResult( $update );
+public function updateUsers_post()  {
+$update = $this->users_model->updateUsers($this->post());
+$this->returnApiResult( $update );
 
-  }
+}
 
 /*
 listing all the users 
 */
 public function usersList_get()  {
   $users = array();
-  $this->load->model('users_model');
   $users = $this->users_model->getAllUsers();
   $this->returnApiResult( $users );
 }
 
 public function getOneUser_get($userId)  {
   $users =array();
-  $this->load->model('users_model');
   $users = $this->users_model->getOneUser($userId);
   $this->returnApiResult( $users );
 }
 
 public function removeOneUser_get($userId)  {
   $users =array();
-  $this->load->model('users_model');
   $users = $this->users_model->removeOneUser($userId);
   $this->returnApiResult( $users );
 }

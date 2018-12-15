@@ -38,42 +38,28 @@ class orders extends REST_Controller
 
 
     public function saveOrder_post() {
-    
     $insert_id = $this->orders_model->saveOrders($this->post());
-
     $this->returnApiResult( $insert_id );
 
-  }
+    }
 
-
-  public function editOrder_post() {
-    
-    $data_arr = $this->post();
-    $orderId= $this->session->userdata('ten_user')->orderId;
-    $data_arr['orderId'] = $orderId;
-    $insert_id = $this->orders_model->updateOrders($data_arr);
-
-    $this->returnApiResult( $insert_id );
-
-  }
-  public function updateOrder_post()  {
-    
+    public function updateOrder_post()  {
     $update = $this->orders_model->updateOrders($this->post());
     $this->returnApiResult( $update );
 
-  }
- 
-  public function getOneOrder_get()  {
+    }
+
+    public function getOneOrder_get($orderId)  {
     $users = array();
-    $users = $this->orders_model->getOneOrder($this->get('order_id'));
+    $users = $this->orders_model->getOneOrder($orderId);
     $this->returnApiResult( $users );
-  }
+    }
 
 
     public function orderList_get()  {
-    	$orders = array();
-    	$orders = $this->orders_model->getAllOrders();
-      $this->returnApiResult( $orders );
+    $orders = array();
+    $orders = $this->orders_model->getAllOrders();
+    $this->returnApiResult( $orders );
     }
 
 

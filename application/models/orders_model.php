@@ -17,15 +17,15 @@ class orders_model extends CI_Model{
 		return ($result);
 	}
 
-	public function getAllOrder()	{
-		$client_qry = "select one_name,one_contact,one_email from one_Order where status = 1";
-		$query = $this->db->query($client_qry);
+	public function getAllOrders()	{
+		$order = "select * from one_Order";
+		$query = $this->db->query($order);
 		return $query->result();
 	}
 
-	public function getOneUser($data){
-		$client_qry = "select one_name,one_contact,one_email from one_Order where status = 1 and".$data['order_id'];
-		$query = $this->db->query($client_qry);
+	public function getOneOrder($orderId){
+		$order = "select * from one_Order where one_order_id=".$orderId;
+		$query = $this->db->query($order);
 		return $query->result();
 	}
 	

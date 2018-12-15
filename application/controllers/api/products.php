@@ -35,7 +35,6 @@ class products extends REST_Controller
     
 
     public function saveProduct_post() {
-    $this->load->model('products_model');
     $insert_id = $this->products_model->saveProducts($this->post());
     $this->returnApiResult( $insert_id );
 
@@ -43,7 +42,6 @@ class products extends REST_Controller
 
 
   public function updateProduct_post()  {
-    $this->load->model('products_model');
     $update = $this->products_model->updateProducts($this->post());
     $this->returnApiResult( $update );
 
@@ -52,7 +50,6 @@ class products extends REST_Controller
 
     public function productList_get()  {
     	$products = array();
-      $this->load->model('products_model');
     	$products = $this->products_model->getAllProducts();
       $this->returnApiResult( $products );
     }
@@ -60,7 +57,6 @@ class products extends REST_Controller
 
      public function getOneProduct_get($productId)  {
       $products = array();
-      $this->load->model('products_model');
       $products = $this->products_model->getOneProduct($productId);
       $this->returnApiResult( $products );
     }
@@ -68,7 +64,6 @@ class products extends REST_Controller
 
      public function removeOneProduct_get($productId)  {
       $products = array();
-      $this->load->model('products_model');
       $products = $this->products_model->removeOneProduct($productId);
       $this->returnApiResult( $products );
     }

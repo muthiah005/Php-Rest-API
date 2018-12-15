@@ -19,14 +19,14 @@ class Kits_model extends CI_Model{
     }
 
     public function getAllKits()   {
-    	$client_qry = "select one_name,one_contact,one_email from one_product where status = 1";
-		$query = $this->db->query($client_qry);
+    	$kits = "select * from one_schoolkit  where one_kit_status = 1";
+		$query = $this->db->query($kits);
 		return $query->result();
 	}
 
 	public function getOneProduct($data){
-		$client_qry = "select one_name,one_contact,one_email from one_product where status = 1 and".$data['product_id'];
-		$query = $this->db->query($client_qry);
+		$kits = "select * from one_schoolkit  where one_kit_status = 1 and".$data['product_id'];
+		$query = $this->db->query($kits);
 		return $query->result();
 	}
 	

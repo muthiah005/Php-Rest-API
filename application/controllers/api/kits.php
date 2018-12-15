@@ -30,47 +30,35 @@ class kits extends REST_Controller
       }
       parent::__construct();
       
-        $this->load->library('session');
+      $this->load->library('session');
+      $this->load->model('kits_model');
 
     }
     
 
-    public function saveKit_post() {
-    $this->load->model('kits_model');
+  public function saveKit_post() {
     $insert_id = $this->kits_model->saveKit($this->post());
-
     $this->returnApiResult( $insert_id );
-
   }
 
 
-  public function editKit_post() {
-    $this->load->model('kits_model');
-    $data_arr = $this->post();
-    $orderId= $this->session->userdata('ten_user')->orderId;
-    $data_arr['orderId'] = $orderId;
-    $insert_id = $this->kits_model->updateKits($data_arr);
-    $this->returnApiResult( $insert_id );
-
-  }
   public function updateKit_post()  {
-    $this->load->model('kits_model');
     $update = $this->kits_model->updateKits($this->post());
     $this->returnApiResult( $update );
 
   }
 
-    public function kitList_get()  {
-    	$kits = array();
-    	$users = $this->users_model->getAllKits();
-      $this->returnApiResult( $kits );
-    }
+  public function kitList_get()  {
+    $kits = array();
+    $kits = $this->kits_model->getAllKits();
+    $this->returnApiResult( $kits );
+  }
 
-    public function getOneKit_get()  {
-      $kits = array();
-      $users = $this->users_model->getAllKits();
-      $this->returnApiResult( $kits );
-    }
+  public function getOneKit_get($kitId)  {
+    $kits = array();
+    $kits = $this->kits_model->getAllKits();
+    $this->returnApiResult( $kits );
+  }
 
      /*
     * Helper function to return the result after the transaction
