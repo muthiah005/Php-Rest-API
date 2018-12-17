@@ -158,22 +158,22 @@ nav .logo{
 .icon_slick_prev {
 	position:absolute;
 	left:0px;
-	top:47%;
 	z-index:10;
 	cursor:pointer;
-	background:#29549b;
+	top:10%;
+	background-color:#ffeb3b;
     padding:2px;
-    border-radius:70%;
+    border-radius:0px;
 }
 .icon_slick_next{
 	position:absolute;
 	right:0px;
-	top:47%;
 	z-index:10;
+	top:10%;
 	cursor:pointer;
-	background:#29549b;
+	background-color:#ffeb3b;
     padding:2px;
-    border-radius:70%;
+    border-radius:0px;
 }
 .la_area {
 	margin-top:90px;
@@ -220,6 +220,34 @@ nav .logo{
 }
 .box_info{
 	min-height:400px;
+}
+.carousel_holder{
+	padding:14vh 4vw;
+	height:400px;
+}
+
+.bgcolor_eee{
+	background-color:#eee;
+}
+.slick-track{
+	height:400px;
+}
+.slick-slide p{
+	color:#000;
+	font-size:1rem;
+	font-weight:500;
+}
+
+
+/*admin template css*/
+
+.ad_content_holder
+{
+	height:89vh;
+}
+.sidenav_container{
+	height:90.3vh;
+	border:1px solid #eee;
 }
 @media only screen and (max-width: 1366px) {
 	

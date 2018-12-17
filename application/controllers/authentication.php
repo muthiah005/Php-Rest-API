@@ -12,23 +12,29 @@ class authentication extends CI_Controller {
 
 
 	public function index()	{
-
-		$this->data['navigation'] = "common/navigation";
-		$this->data['footer'] = "common/footer";
 		$this->data['title'] = "Login";
-		$this->data['content'] = 'auth/login';
-		$this->load->view('common/template_admin_login',$this->data);
+		$this->data['isLoggedIn'] = "false";
+		$this->data['content'] = 'common/auth/login';
+		$this->load->view('common/auth/template_admin',$this->data);
 	}
-	public function authlogin(){			
-		$user = array();
-		$user = $this->auth_model->getUserDtails();
-		if($user != null)
-		{
-			$this->session->set_userdata('ten_user',$user);
-		}
-		else { 			
-			echo "eror handling"
-		}
+	public function authlogin(){	
+		echo "validate credentails here";		
+		// $user = array();
+		// $user = $this->auth_model->getUserDtails();
+		// if($user != null)
+		// {
+		// 	$this->session->set_userdata('ten_user',$user);
+		// }
+		// else { 			
+		// 	echo "eror handling";
+		// }
+	}
+
+	public function dashboard(){	
+		$this->data['isLoggedIn'] = "true";
+		$this->data['title'] = "Dashboard";
+		$this->data['content'] = 'common/auth/dashboard';
+		$this->load->view('common/auth/template_admin',$this->data);	
 	}
     public function logout ()
 	 {

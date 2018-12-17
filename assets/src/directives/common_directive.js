@@ -3,7 +3,7 @@
 
 var itemHolder = videoplayer.directive('itemHeader', function  ($rootScope,$mdDialog,$timeout) {
 	return {
-		templateUrl: '././assets/src/views/header.html',
+		templateUrl: window.onetoten.base_url+'assets/src/views/header.html',
 		restrict : 'E',
 		controller : function($scope)	{
 
@@ -18,7 +18,7 @@ var itemHolder = videoplayer.directive('itemHeader', function  ($rootScope,$mdDi
 			$timeout(function() {
 					$mdDialog.show({
 					controller: 'PopupController',
-					templateUrl: '././assets/src/views/login.html',
+					templateUrl: window.onetoten.base_url+'assets/src/views/login.html',
 					parent: angular.element(document.body),
 					targetEvent: e,
 					clickOutsideToClose:false,
@@ -36,7 +36,7 @@ var itemHolder = videoplayer.directive('itemHeader', function  ($rootScope,$mdDi
 				
 				$mdDialog.show({
 					controller: 'PopupController',
-					templateUrl: '././assets/src/views/register.html',
+					templateUrl: window.onetoten.base_url+'assets/src/views/register.html',
 					parent: angular.element(document.body),
 					targetEvent: e,
 					// clickOutsideToClose:false,
@@ -73,7 +73,7 @@ var itemHolder = videoplayer.directive('itemHeader', function  ($rootScope,$mdDi
 
 var itemHolder = videoplayer.directive('itemHolder', function  ($rootScope,$mdDialog) {
 	return {
-		templateUrl: '././assets/src/views/item_holder.html',
+		templateUrl: window.onetoten.base_url+'assets/src/views/item_holder.html',
 		restrict : 'E',
 		controller : function($scope)	{
 
@@ -226,7 +226,7 @@ var itemHolder = videoplayer.directive('itemHolder', function  ($rootScope,$mdDi
 
 var menuList = videoplayer.directive('offerList', function  ($rootScope,$mdDialog) {
 	return {
-		templateUrl: '././assets/src/views/offer_list.html',
+		templateUrl: window.onetoten.base_url+'assets/src/views/offer_list.html',
 		restrict : 'E',
 		controller : function($scope)	{
 	
@@ -239,7 +239,7 @@ var menuList = videoplayer.directive('offerList', function  ($rootScope,$mdDialo
 
 var menuList = videoplayer.directive('menuList', function  ($rootScope,$mdDialog) {
 	return {
-		templateUrl: '././assets/src/views/menu_list.html',
+		templateUrl: window.onetoten.base_url+'assets/src/views/menu_list.html',
 		restrict : 'E',
 		controller : function($scope)	{
 		
@@ -252,7 +252,7 @@ var menuList = videoplayer.directive('menuList', function  ($rootScope,$mdDialog
 
 var itemCarousel = videoplayer.directive('itemCarousel', function  ($rootScope,$mdDialog,$timeout) {
 	return {
-		templateUrl: '././assets/src/views/carousel.html',
+		templateUrl: window.onetoten.base_url+'assets/src/views/carousel.html',
 		restrict : 'E',
 		controller : function($scope)	{
 	
@@ -275,7 +275,7 @@ var itemCarousel = videoplayer.directive('itemCarousel', function  ($rootScope,$
 
 var cartItems = videoplayer.directive('cartItem', function  ($rootScope,$mdDialog) {
 	return {
-		templateUrl: '././assets/src/views/cart.html',
+		templateUrl: window.onetoten.base_url+'assets/src/views/cart.html',
 		restrict : 'E',
 		controller : function($scope)	{
 			$rootScope.cartItems = [
@@ -345,7 +345,7 @@ var cartItems = videoplayer.directive('cartItem', function  ($rootScope,$mdDialo
 
 var cartItems = videoplayer.directive('itemFooter', function  ($rootScope,$mdDialog) {
 	return {
-		templateUrl: '././assets/src/views/footer.html',
+		templateUrl: window.onetoten.base_url+'assets/src/views/footer.html',
 		restrict : 'E',
 		controller : function($scope)	{
 
@@ -357,3 +357,89 @@ var cartItems = videoplayer.directive('itemFooter', function  ($rootScope,$mdDia
 		}
 	}
 });
+
+
+// admin related directives
+
+
+
+
+var kitArea = videoplayer.directive('dashboardContainer', function  ($rootScope,$mdDialog) {
+	return {
+		templateUrl: window.onetoten.base_url+'assets/src/views/dashboard_container.html',
+		restrict : 'E',
+		controller : function($scope)	{
+
+
+	
+		},
+		link : function() {
+			console.debug("dashboardContainer")
+			$('.collapsible').collapsible();
+		}
+	}
+});
+
+
+var totalprogress = videoplayer.directive('totalProgress', function  ($rootScope,$mdDialog) {
+	return {
+		templateUrl: window.onetoten.base_url+'assets/src/views/total_progress.html',
+		restrict : 'E',
+		controller : function($scope)	{
+
+
+	
+		},
+		link : function() {
+			console.debug("total_progress")
+		}
+	}
+});
+
+var kitArea = videoplayer.directive('kitArea', function  ($rootScope,$mdDialog) {
+	return {
+		templateUrl: window.onetoten.base_url+'assets/src/views/drag_drop.html',
+		restrict : 'E',
+		controller : function($scope)	{
+
+		$scope.itemList =[
+		  {
+		    "item": "1",
+		    "name": "one_2"
+		  },
+		  {
+		    "item": "2",
+		    "name": "one_22"
+		  },
+		  {
+		    "item": "1",
+		    "name": "one_eee"
+		  },
+		  {
+		    "item": "1",
+		    "name": "one_ewwwe"
+		  },
+		  {
+		    "item": "1",
+		    "name": "one_2www"
+		  },
+		  {
+		    "item": "1",
+		    "name": "one_2"
+		  },
+		  {
+		    "item": "1",
+		    "name": "one_2"
+		  }
+		]
+		$scope.dropedList = [];
+
+	
+		},
+		link : function() {
+			console.debug("drag_drop")
+		}
+	}
+});
+
+

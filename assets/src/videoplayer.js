@@ -1,5 +1,5 @@
 
-var videoplayer = angular.module('videoplayer',['ngResource','ngSanitize','ngMaterial','ngAnimate',	'commonControllers'	,'dataFactory',]);
+var videoplayer = angular.module('videoplayer',['ngResource','ngDragDrop','ngSanitize','ngMaterial','ngAnimate',	'commonControllers'	,'dataFactory',]);
 
 
 

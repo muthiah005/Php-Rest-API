@@ -1,0 +1,29 @@
+
+<div class="row">
+	<div class="col l3 col m3 col s3">
+			<ul class="collection">
+			<li class="collection-item" ng-repeat="item in itemList track by $index">{{item.name}}</li>
+			</ul>
+	</div>
+	<div class="col l9 col m9 col s9">
+
+	</div>
+</div>
+
+
+<!-- <div class="col-md-8">
+<div ng-repeat="item in itemList by $index"  class="row" style="background-color:#E5E2DD;border: 1px solid #464444;margin-bottom: 10px">
+<div class="col-md-2" style="padding-left: 0px;">jjjjj</div>
+<div style="min-height: 87px;margin-bottom: -10px;margin-top:10px" class=" col-md-10" data-drop="true" ng-model='bucket.container'  jqyoui-droppable="{multiple:true, onDrop:'onDropHandler'}">
+<div class="btn btn-info btn-draggable m-r-10 m-b-10" ng-repeat="item in itemList track by $index" ng-show="item.name" data-drag="{{item.drag}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="bucket.container" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.name}}</div>
+</div>
+
+</div>
+
+</div>
+<div class="col-md-4">
+<div class="" ng-repeat="item in dropedList" data-drop="true" ng-model='dropedList' data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=questionList])'}"  jqyoui-droppable="{index: {{$index}}}">
+<div class="btn btn-info btn-draggable m-r-10 m-b-10" data-drag="{{item.drag}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="questionList" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}" ng-hide="!item.name">{{item.name}}</div>
+</div>
+</div> -->
+
